@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <locale.h>
 
-time();
-text();
-calc();
+int time();
+int text();
+int calc();
 
 int main()
 {
+	setlocale(LC_ALL, "RUS");
 	time();
 	text();
 	calc();
+	homework();
 	return 0;
 }
 
@@ -20,14 +22,12 @@ int calc()
 	n = 3;
 	k = 4;
 	m = 2;
-	setlocale(LC_ALL, "RUS");
 	printf("ƒано:\n%15.0d\n%15.0d\n       --------------------\n ответ: + %*.*d . %*.*d", n, L, k, k ,n / L, m,  m, n % L);
 	return 0;
 }
 
 int time()
 {
-	setlocale(LC_ALL, "RUS");
 	int N, K;
 	N = 10;
 	K = 35;
@@ -41,7 +41,6 @@ int time()
 
 int text() 
 {
-	setlocale(LC_ALL, "RUS");
 	printf("123\n");
 	printf("\n");
 	printf("1\n2\n3\n");
@@ -62,5 +61,23 @@ int text()
 	printf("(f) %f разделить %f равно %f\n ", 5., 2000000., 5. / 2000000);
 	printf("(g) %g разделить %g равно %g\n ", 5., 2000000., 5. / 2000000);
 	printf("(e) %e разделить %e равно %e\n ", 5., 2000000., 5. / 2000000);
+	return 0;
+}
+
+int homework()
+{
+	int X;
+	X = 1200;
+	printf("дано:\n");
+	printf("количество человек - 4\n");
+	printf("размер чаевыех - 15% от счЄта\n");
+	printf("цена в одном чеке - X\n");
+	printf("количество чаевых, полученных официантом - ?\n");
+	printf("\n");
+	printf("решение:\n");
+	printf("чаевые с одного чека на %d в размере %d процентов - %8.2f\n", X, 15, X * 0.15);
+	printf("сумма чаевых, полученных официантом - %8.2f\n", X * 0.15 * 4);
+	printf("\n");
+	printf("ответ: %8.2f", X * 0.15 * 4);
 	return 0;
 }
